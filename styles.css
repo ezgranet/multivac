@@ -1,0 +1,42 @@
+body {
+  background-color: #f3f1ec; /* Beige paper-like background */
+  color: #000;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-window {
+  background: #fff;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.output-tape {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+  font-family: "Courier New", Courier, monospace;
+  color: #333; /* Inked text color */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap; /* Preserve formatting like spaces and line breaks */
+  border: 2px dotted #aaa; /* Punch tape border */
+  padding: 10px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #f9f8f4,
+    #f9f8f4 5px,
+    #e0dfdb 5px,
+    #e0dfdb 6px
+  ); /* Punch card stripes */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
