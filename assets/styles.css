@@ -1,33 +1,25 @@
 body {
   background-color: #000; /* Terminal Black Background */
-  color: #0f0; /* Green Text */
+ color: #fff; 
   margin: 0;
   padding: 0;
+  font-family: "Courier Prime"  !important;
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-@font-face {
-    font-family: 'minecart_lcdregular';
-    src: url('minecartlcd-webfont.woff2') format('woff2'),
-         url('minecartlcd-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-opacity: 0.5;
 }
 
 
 
 header {
   background: linear-gradient(to bottom, #004400, #002200); /* Retro Header */
-  color: #0f0;
   padding: 1em;
   text-align: center;
-  border-bottom: 2px solid #0f0;
 }
 
 .chat-container {
+    background-color: #000; /* Terminal Black Background */
+
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -36,7 +28,9 @@ header {
 }
 
 .chat-window {
-  border: 1px solid #0f0;
+      background-color: #000 !important; /* Terminal Black Background */
+color: #fff;
+  font-family: "Courier Prime";
   padding: 1em;
   overflow-y: auto;
   height: 80%;
@@ -46,13 +40,12 @@ header {
 
 .chat-input {
   display: flex;
-  border-top: 2px solid #0f0;
 }
 
 .chat-input textarea {
   flex: 1;
   background-color: #000;
-  color: #0f0;
+  color: #fff;
   border: none;
   outline: none;
   font-size: 1rem;
@@ -62,7 +55,6 @@ header {
 
 .chat-input button {
   background-color: #004400;
-  color: #0f0;
   border: none;
   padding: 0.5em 1em;
   cursor: pointer;
@@ -81,7 +73,6 @@ header {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #0f0;
 }
 
 
@@ -109,7 +100,7 @@ body {
   display: inline-block;
   width: 10px;
   height: 20px;
-  background-color: #0f0;
+  background-color: #fff;
   animation: blink 1s steps(2, start) infinite;
 }
 /* Printer Container */
@@ -118,12 +109,12 @@ body {
   flex-direction: column;
   gap: 20px; /* Space between printers */
   position: relative;
-  font-family: 'minecart_lcdregular' !important;
+  font-family: 'Doto' !important;
 }
 
 /* Individual Printer */
 .printer {
-  font-family: 'minecart_lcdregular' !important;
+  font-family: 'Doto' !important;
 
   position: relative;
   width: 100%; /* Full width of the screen */
@@ -142,9 +133,10 @@ body {
 .tape-line {
   position: absolute;
   top: 50%;
+  text-transform: uppercase;
   transform: translateY(-50%) translateX(100%); /* Start off-screen to the right */
   height: 40px; /* Height of the tape */
-  font-family: 'minecart_lcdregular' !important;
+  font-family: 'Doto' !important;
   font-size: 20px;
   color: #333; /* Dark text color */
   opacity: 0.65;
@@ -169,14 +161,14 @@ body {
 
 /* Style for individual characters */
 .tape-line span {
-    font-family: 'minecart_lcdregular';
+    font-family: 'doto';
   display: inline-block;
   margin-right: 10px; /* Add spacing between characters */
 }
 
 /* Optional: Perforations between characters */
 .tape-line span::after {
-    font-family: 'minecart_lcdregular';
+    font-family: 'doto';
 
   content: '|'; /* Perforation symbol */
   position: absolute;
@@ -193,18 +185,22 @@ form#chat-form {
 
 input#user-input{background-color: black;
   width: 100%;
+  font-family: "Courier Prime";
     overflow-wrap: break-word;
   word-wrap: break-word;
   white-space: pre-wrap; /* Preserve formatting like spaces and line breaks */
 
 color: white !important;
-font-size: x-large;
+/*font-size: x-large;*/
 text-transform: uppercase !important;
 }
 
 button { 
 background-color: red;
  border: 10px  #aaa; /* Punch tape border */
+text-transform: uppercase;
+font-family: "Courier New";
+cursor:pointer;
 
 color: white;
 font-size: x-large;

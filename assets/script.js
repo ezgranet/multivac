@@ -1,3 +1,63 @@
+async function sendMessageToBackend(message) {
+    const response = await fetch('/.netlify/functions/openai', { 
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+    });
+
+    const data = await response.json();
+    return data.reply;
+}
+async function sendMessageToBackend(message) {
+    try {
+        // Call your Netlify function
+        const response = await fetch('/.netlify/functions/openai', { 
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message }) // Send the user's message to the backend
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to get response from server.');
+        }
+
+        const data = await response.json();
+        return data.reply; // The AI's reply from OpenAI
+    } catch (error) {
+        console.error('Error:', error.message);
+        return 'Error: Unable to connect to the server.';
+    }
+}
+
+// Event listener for your chat form
+document.getElementById('chat-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const inputMessage = document.getElementById('chat-input').value;
+
+    if (!inputMessage) return;
+
+    // Display the user's message
+    addMessageToChat('User', inputMessage);
+
+    // Get the AI's response from the backend
+    const aiResponse = await sendMessageToBackend(inputMessage);
+    addMessageToChat('AI', aiResponse);
+
+    // Clear the input field
+    document.getElementById('chat-input').value = '';
+});
+
+// Helper function to display messages in the chat
+function addMessageToChat(sender, message) {
+    const chatBox = document.getElementById('chat-box');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('chat-message', sender.toLowerCase());
+    messageElement.textContent = `${sender}: ${message}`;
+    chatBox.appendChild(messageElement);
+}
+
+
 // JavaScript for Ask Multivac
 window.onload = () => {
   const outputTape = document.getElementById('output-tape');
