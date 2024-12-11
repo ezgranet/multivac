@@ -1,0 +1,30 @@
+functionsDirectory = "/Users/ezgranet/Documents/GitHub/multivac/netlify/functions"
+functionsDirectoryOrigin = "ui"
+plugins = []
+headers = []
+redirects = []
+
+[build]
+publish = "/Users/ezgranet/Documents/GitHub/multivac"
+publishOrigin = "default"
+commandOrigin = "ui"
+command = "# no build command"
+functions = "/Users/ezgranet/Documents/GitHub/multivac/netlify/functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[functions]
+
+[functions."*"]
