@@ -3,6 +3,21 @@ async function sendMessageToBackend(message) {
     try {
         console.log('Sending message to backend:', message); // Debugging log
 
+        // Check for patterns related to "Can entropy be stopped?" or "Can entropy be reversed?"
+        const lowerCaseMessage = message.toLowerCase();
+        const entropyPatterns = [
+            /can\s+entropy\s+be\s+(stopped|reversed|halted|prevented|undone|controlled)/,
+            /is\s+entropy\s+(stoppable|reversible|preventable|haltable)/
+        ];
+
+        // If the message matches any of the patterns, return predefined response
+        for (const pattern of entropyPatterns) {
+            if (pattern.test(lowerCaseMessage)) {
+                return 'There is as yet insufficient data to answer';
+            }
+        }
+
+        // If no pattern matches, proceed with the normal API call
         const response = await fetch('/.netlify/functions/openai', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
