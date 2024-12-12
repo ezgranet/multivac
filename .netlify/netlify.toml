@@ -9,7 +9,7 @@ headers = []
 [functions."*"]
 
 [build]
-publish = "/Users/ezgranet/Documents/GitHub/multivac/build"
+publish = "/Users/ezgranet/Documents/GitHub/multivac/public"
 publishOrigin = "config"
 commandOrigin = "ui"
 command = "# no build command"
