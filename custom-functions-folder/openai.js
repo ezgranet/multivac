@@ -30,10 +30,21 @@ exports.handler = async function (event, context) {
             };
         }
 
+        // Check message length (restrict to 280 characters)
+        if (message.length > 280) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'Message exceeds 280 characters. Please shorten your message.' })
+            };
+        }
+
+        // Limit chat history to just 1 message (only the latest user message)
+        const chatHistory = [{ role: 'user', content: message }];
+
         // Make request to OpenAI
         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-            model: 'gpt-3.5-turbo',
-            messages: [{ role: 'user', content: message }]
+            model: 'gpt-3.5-turbo',  // Adjust model as needed
+            messages: chatHistory  // Only include the latest message in history
         }, {
             headers: {
                 'Authorization': `Bearer ${OPENAI_API_KEY}`,
@@ -49,8 +60,8 @@ exports.handler = async function (event, context) {
                 'Access-Control-Allow-Origin': '*', // Important for cross-origin requests
                 'Access-Control-Allow-Methods': 'POST'
             },
-            body: JSON.stringify({ 
-                reply: response.data.choices[0].message.content 
+            body: JSON.stringify({
+                reply: response.data.choices[0].message.content
             })
         };
     } catch (error) {
@@ -59,10 +70,10 @@ exports.handler = async function (event, context) {
 
         return {
             statusCode: error.response ? error.response.status : 500,
-            body: JSON.stringify({ 
-                error: error.response 
-                    ? error.response.data.error.message 
-                    : 'Unexpected error communicating with OpenAI' 
+            body: JSON.stringify({
+                error: error.response
+                    ? error.response.data.error.message
+                    : 'Unexpected error communicating with OpenAI'
             })
         };
     }
