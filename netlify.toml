@@ -2,7 +2,7 @@
 directory = "custom-functions-folder"
 
 [build]
-publish = "build" # Or your output folder if it's not 'build'
+  publish = "public" # Replace "public" with the actual folder containing your static files
 
 [[redirects]]
   from = "/*"

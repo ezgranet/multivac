@@ -11,8 +11,8 @@ headers = []
 [build]
 publish = "/Users/ezgranet/Documents/GitHub/multivac/build"
 publishOrigin = "config"
-commandOrigin = "config"
-command = "npm run build"
+commandOrigin = "ui"
+command = "# no build command"
 functions = "/Users/ezgranet/Documents/GitHub/multivac/custom-functions-folder"
 
 [build.environment]
