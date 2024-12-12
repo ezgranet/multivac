@@ -1,15 +1,19 @@
-functionsDirectory = "/Users/ezgranet/Documents/GitHub/multivac/netlify/functions"
-functionsDirectoryOrigin = "ui"
+functionsDirectory = "/Users/ezgranet/Documents/GitHub/multivac/custom-functions-folder"
+functionsDirectoryOrigin = "config"
+redirectsOrigin = "config"
 plugins = []
 headers = []
-redirects = []
+
+[functions]
+
+[functions."*"]
 
 [build]
-publish = "/Users/ezgranet/Documents/GitHub/multivac"
-publishOrigin = "default"
-commandOrigin = "ui"
-command = "# no build command"
-functions = "/Users/ezgranet/Documents/GitHub/multivac/netlify/functions"
+publish = "/Users/ezgranet/Documents/GitHub/multivac/build"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+functions = "/Users/ezgranet/Documents/GitHub/multivac/custom-functions-folder"
 
 [build.environment]
 
@@ -25,6 +29,14 @@ functions = "/Users/ezgranet/Documents/GitHub/multivac/netlify/functions"
 
 [build.services]
 
-[functions]
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
 
-[functions."*"]
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]

@@ -2,8 +2,7 @@
 directory = "custom-functions-folder"
 
 [build]
-  publish = "build" # Adjust this if your frontend build output is different
-  command = "npm run build" # Or the appropriate build command for your project
+publish = "build" # Or your output folder if it's not 'build'
 
 [[redirects]]
   from = "/*"
