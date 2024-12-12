@@ -1,4 +1,4 @@
-functionsDirectory = "/Users/ezgranet/Documents/GitHub/multivac/functions"
+functionsDirectory = "/Users/ezgranet/Documents/GitHub/multivac/.netlify/functions"
 functionsDirectoryOrigin = "ui"
 plugins = []
 headers = []
@@ -9,7 +9,7 @@ publish = "/Users/ezgranet/Documents/GitHub/multivac"
 publishOrigin = "default"
 commandOrigin = "ui"
 command = "# no build command"
-functions = "/Users/ezgranet/Documents/GitHub/multivac/functions"
+functions = "/Users/ezgranet/Documents/GitHub/multivac/.netlify/functions"
 
 [build.environment]
 
