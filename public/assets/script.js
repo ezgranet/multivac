@@ -13,7 +13,7 @@ async function sendMessageToBackend(message) {
         // If the message matches any of the patterns, return predefined response
         for (const pattern of entropyPatterns) {
             if (pattern.test(lowerCaseMessage)) {
-                return 'There is as yet insufficient data to answer';
+                return 'INSUFFICIENT DATA FOR MEANINGFUL ANSWER';
             }
         }
 

@@ -8,6 +8,18 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+/* Change the color of links to red */
+a {
+  color: red;
+  text-decoration: none; /* Optional: removes underline from links */
+}
+
+/* Style for blockquotes to make them indented */
+blockquote {
+  margin-left: 20px; /* Indents the blockquote */
+  padding-left: 10px; /* Adds padding to the left of the blockquote */
+  border-left: 4px solid #ccc; /* Optional: adds a left border to visually separate the blockquote */
+}
 
 
 
